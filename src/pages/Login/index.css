@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding-top: 20vh;
+    background-color: #997777;
+    height: 100vh;
+}
+
+.actions .zyqy-button {
+    /* display: flex;
+    justify-content: flex-end; */
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.zyqy-card .content {
+    width: 200px;
+    padding: 25px;
+}
+
+.container .zyqy-input {
+    width: 100%;
+}
