@@ -1,8 +1,21 @@
+// const LoginPage = import('../pages/Login');
+// const BasicLayout = import('../layout/BasicLayout');
+import LoginPage from '../pages/Login';
+import BlogPage from '../pages/Blog'
+import BasicLayout from '../layout/BasicLayout';
+
 const routerConfig =  [
-    {key: 'blog', title: '博客管理', path: '/blog', isMenu: true},
-    {key: 'sign', title: '标签管理', path: '/sign', isMenu: true},
-    {key: 'profile', title: '个人信息', path: '/blog', isMenu: true},
-    {key: 'login', path: '/login'}
+    {
+        path: '/login',
+        element:  <LoginPage />
+    },
+    {
+        path: '/',
+        element: <BasicLayout />,
+        children: [
+            {path: 'blog', element: <BlogPage />}
+        ]
+    }
 ];
 
 export default routerConfig;

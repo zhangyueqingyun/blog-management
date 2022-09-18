@@ -1,18 +1,14 @@
-// import routerConfig from './config/router';
-// import BasicLayout from './layout/BasicLayout';
-// import Login from './pages/Login'
+import React from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import routerConfig from './config/router';
 
 import './App.css';
 
-// const menuConfig = routerConfig.filter(item => item.isMenu);
+const router = createBrowserRouter(routerConfig);
 
-function App() {
-  return (
-    <div className="App">
-      {/* <Login />
-      <BasicLayout /> */}
-    </div>
+export default function App() {
+  return (<React.StrictMode>
+    <RouterProvider router={router}></RouterProvider>
+  </React.StrictMode>
   );
 }
-
-export default App;
