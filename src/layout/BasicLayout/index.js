@@ -1,6 +1,7 @@
 import { Layout } from '@zhangyueqingyun_/react-components';
 import { Outlet, useLocation } from 'react-router-dom';
 import menuConfig from '../../config/menu';
+import './index.css';
 
 export default function BasicLayout() {
     const { pathname } = useLocation();
@@ -13,8 +14,8 @@ export default function BasicLayout() {
     <Layout.BasicLayout 
         menuConfig={menuConfig} 
         defaultActiveKey={menuConfig.defaultActiveKey}
-    >
+    ><div className="basic-layout-content">
         <Outlet />
-    </Layout.BasicLayout>
+    </div></Layout.BasicLayout>
     );
 }

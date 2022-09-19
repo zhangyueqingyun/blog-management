@@ -5,8 +5,7 @@ const BASE_URL = 'https://zhangyueqingyun.tech/api';
 const request = async function(url, options) {
     try {
       const result = await axios(url,options);
-      console.log('result', result)
-      return result.data
+      return result.data;
     } catch (e) {
       const {response} = e;
       if(response?.status === 401 && response.data?.statusCode === 401 ) {

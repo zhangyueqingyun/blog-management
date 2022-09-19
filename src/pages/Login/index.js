@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Form, Button, Field} from '@zhangyueqingyun_/react-components';
+import { Card, Form, Button, Field, Toast} from '@zhangyueqingyun_/react-components';
 import {login} from '../../services/login';
 import { SESSION_STORAGE } from '../../utils/storage';
 import './index.css';
@@ -8,10 +8,11 @@ function Actions({getValues}) {
     async function onClick() {
         const user = getValues();
         const {access_token} = await login(user);
-        console.log('access_tion', access_token)
         sessionStorage[SESSION_STORAGE.ACCESS_TOKEN] = access_token;
-        // message.success('登陆成功');
-        // window.location = '/blog';
+        Toast.success('登陆成功');
+        setTimeout(function() {
+            window.location.href = '/blog';
+        }, 1000);
         return
     }
 

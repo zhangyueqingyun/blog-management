@@ -4,7 +4,7 @@ specifiers:
   '@testing-library/jest-dom': ^5.16.5
   '@testing-library/react': ^13.4.0
   '@testing-library/user-event': ^13.5.0
-  '@zhangyueqingyun_/react-components': ^1.0.11
+  '@zhangyueqingyun_/react-components': ^1.0.18
   axios: ^0.27.2
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -17,7 +17,7 @@ dependencies:
   '@testing-library/jest-dom': 5.16.5
   '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
   '@testing-library/user-event': 13.5.0
-  '@zhangyueqingyun_/react-components': 1.0.11
+  '@zhangyueqingyun_/react-components': 1.0.18
   axios: 0.27.2
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -2781,8 +2781,11 @@ packages:
     resolution: {integrity: sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==}
     dev: false
 
-  /@zhangyueqingyun_/react-components/1.0.11:
-    resolution: {integrity: sha512-D5m5gD7uKlnNkoxIFO/wSB58z2sMH+RW240EV6BrjC0sefFWutkLXyww4sF71PGE+iB8k7B1GVhd+HoHJL6uXA==}
+  /@zhangyueqingyun_/react-components/1.0.18:
+    resolution: {integrity: sha512-vHIXTl/K4Vj9m+kc88OeZfRPlYU1v2r8JnytPVRZVlFfzU5zMvvrATGge9L2vlZsKSegHc2EEtZ/b9T+yvN2ow==}
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /abab/2.0.6:
