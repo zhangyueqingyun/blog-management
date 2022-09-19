@@ -1,11 +1,20 @@
 import React from 'react';
 import { Card, Form, Button, Field} from '@zhangyueqingyun_/react-components';
+import {login} from '../../services/login';
+import { SESSION_STORAGE } from '../../utils/storage';
 import './index.css';
 
 function Actions({getValues}) {
-    function onClick() {
-        console.log('getValues', getValues())
+    async function onClick() {
+        const user = getValues();
+        const {access_token} = await login(user);
+        console.log('access_tion', access_token)
+        sessionStorage[SESSION_STORAGE.ACCESS_TOKEN] = access_token;
+        // message.success('登陆成功');
+        // window.location = '/blog';
+        return
     }
+
     return <div className="actions">
         <Button onClick={onClick} type="primary">
             登录

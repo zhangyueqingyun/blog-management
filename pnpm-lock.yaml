@@ -4,7 +4,8 @@ specifiers:
   '@testing-library/jest-dom': ^5.16.5
   '@testing-library/react': ^13.4.0
   '@testing-library/user-event': ^13.5.0
-  '@zhangyueqingyun_/react-components': ^1.0.8
+  '@zhangyueqingyun_/react-components': ^1.0.11
+  axios: ^0.27.2
   react: ^18.2.0
   react-dom: ^18.2.0
   react-router: ^6.4.0
@@ -16,7 +17,8 @@ dependencies:
   '@testing-library/jest-dom': 5.16.5
   '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
   '@testing-library/user-event': 13.5.0
-  '@zhangyueqingyun_/react-components': 1.0.8
+  '@zhangyueqingyun_/react-components': 1.0.11
+  axios: 0.27.2
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-router: 6.4.0_react@18.2.0
@@ -2779,8 +2781,8 @@ packages:
     resolution: {integrity: sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==}
     dev: false
 
-  /@zhangyueqingyun_/react-components/1.0.8:
-    resolution: {integrity: sha512-cmn7dU1gupukoYygk2dl3Wf0CkN4PO8H7BARW/Dryo0pzac6TTzPJKyartj89qfVhoAjcVPOE6bgkK22YsyD7A==}
+  /@zhangyueqingyun_/react-components/1.0.11:
+    resolution: {integrity: sha512-D5m5gD7uKlnNkoxIFO/wSB58z2sMH+RW240EV6BrjC0sefFWutkLXyww4sF71PGE+iB8k7B1GVhd+HoHJL6uXA==}
     dev: false
 
   /abab/2.0.6:
@@ -3081,6 +3083,15 @@ packages:
   /axe-core/4.4.3:
     resolution: {integrity: sha512-32+ub6kkdhhWick/UjvEwRchgoetXqTK14INLqbGm5U2TzBkBNF3nQtLYm8ovxSkQWArjEQvftCKryjZaATu3w==}
     engines: {node: '>=4'}
+    dev: false
+
+  /axios/0.27.2:
+    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
+    dependencies:
+      follow-redirects: 1.15.2
+      form-data: 4.0.0
+    transitivePeerDependencies:
+      - debug
     dev: false
 
   /axobject-query/2.2.0:
@@ -5007,6 +5018,15 @@ packages:
 
   /form-data/3.0.1:
     resolution: {integrity: sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg==}
+    engines: {node: '>= 6'}
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.35
+    dev: false
+
+  /form-data/4.0.0:
+    resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
     engines: {node: '>= 6'}
     dependencies:
       asynckit: 0.4.0
