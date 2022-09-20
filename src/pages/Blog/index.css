@@ -1,3 +1,24 @@
-.basic-layout-content {
+.zyqy-basic-layout-content {
     padding: 20px;
+    width: 100%;
+}
+
+.blog-page {
+    width: 100%;
+}
+
+.blog-page .page-title {
+    padding: 5px 15px;
+    font-weight: 700;
+    /* border-bottom: 1px solid #eee; */
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.blog-page .page-content {
+    margin: 0 30px;
+}
+.zyqy-basic-layout-title {
+    text-align: center;
 }

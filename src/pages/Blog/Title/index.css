@@ -1,0 +1,11 @@
+.tree-title {
+    display: flex;
+    align-items: center;
+}
+
+.op-icon {
+    margin-left: 10px;
+    color: #ee9999;
+    cursor: pointer;
+    font-size: .7em;
+}

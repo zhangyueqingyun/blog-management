@@ -1,23 +1,27 @@
-import React from 'react';
-import { Card, Form, Button, Field, Toast} from '@zhangyueqingyun_/react-components';
+import React, {useState} from 'react';
+import { Card, Form, Button, Field, Toast, Space } from '@zhangyueqingyun_/react-components';
 import {login} from '../../services/login';
 import { SESSION_STORAGE } from '../../utils/storage';
 import './index.css';
 
 function Actions({getValues}) {
+    const [loading, setLoading] = useState(false);
+
     async function onClick() {
+        setLoading(true);
         const user = getValues();
         const {access_token} = await login(user);
         sessionStorage[SESSION_STORAGE.ACCESS_TOKEN] = access_token;
         Toast.success('登陆成功');
+        setLoading(false);
         setTimeout(function() {
             window.location.href = '/blog';
-        }, 1000);
+        }, 2000);
         return
     }
 
     return <div className="actions">
-        <Button onClick={onClick} type="primary">
+        <Button loading={loading} onClick={onClick} type="primary">
             登录
         </Button>
     </div>
@@ -26,12 +30,20 @@ function Actions({getValues}) {
 const {Text, Password} = Field;
 
 export default function LoginPage () {
-    return <div className="container"><div>
-        <Card title="博客管理系统 - 登录"> 
+    return <div className="container">
+        <Card title={<Space interval={12}>
+                <img 
+                    src="https://zblog-images.oss-cn-hangzhou.aliyuncs.com/avatar.jpeg" 
+                    alt="logo" 
+                    width={25}
+                    height={25}
+                />
+                博客管理系统
+            </Space>}
+        > 
             <Form actions={<Actions />}>
-                <Text name="username" placeholder="用户名"/><br />
-                <Password name="password" placeholder="密码"/><br />
+                <Text label="账号" name="username" placeholder="用户名"/>
+                <Password label="密码" name="password" placeholder="密码"/>
             </Form>
         </Card></div>
-    </div>
 }

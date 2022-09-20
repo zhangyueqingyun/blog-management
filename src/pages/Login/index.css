@@ -1,9 +1,11 @@
 .container {
     display: flex;
     justify-content: center;
-    padding-top: 20vh;
-    background-color: #997777;
+    align-items: flex-start;
+    background: linear-gradient(white,#fff8f8);
     height: 100vh;
+    box-sizing: border-box;
+    padding-top: 20vh;
 }
 
 .actions .zyqy-button {
@@ -13,11 +15,32 @@
     margin-bottom: 0;
 }
 
-.zyqy-card .content {
-    width: 200px;
-    padding: 25px;
+.zyqy-card .title {
+    padding: 15px 25px;
+    background-color: #fff6f6;
+    font-size: 18px;
 }
 
-.container .zyqy-input {
+.zyqy-card .content {
+    background-color: #fff7f7;
+    width: 400px;
+    padding: 25px;
+    height: auto;
+}
+
+.zyqy-card .zyqy-field {
     width: 100%;
+}
+
+.zyqy-card .zyqy-label {
+    font-size: 15px;
+}
+
+.zyqy-card .zyqy-input {
+    font-size: 16px;
+}
+
+
+.zyqy-card .zyqy-button {
+    padding: 7px 15px;
 }
