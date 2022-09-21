@@ -1,9 +1,17 @@
-import { Modal } from '@zhangyueqingyun_/react-components';
+import { Modal, Toast } from '@zhangyueqingyun_/react-components';
 import { DeleteOutlined } from '@ant-design/icons';
+import { deleteCategory } from '../../../../services/blog';
 
-export default function Delete({title}) {
-    function onOk(values) {
-        console.log('values', values);
+import { useContext } from 'react';
+import { TitleContext } from '../context';
+
+export default function Delete() {
+    const {id, title} = useContext(TitleContext);
+
+    async function onOk(values) {
+        await deleteCategory(id);
+        Toast.success('删除成功');
+        return true;
     }
 
     return <Modal

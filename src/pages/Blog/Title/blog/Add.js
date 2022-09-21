@@ -2,11 +2,19 @@ import { ModalForm, Field, Button, Toast } from '@zhangyueqingyun_/react-compone
 import { uploadBlog } from '../../../../utils/oss';
 import { PlusCircleFilled } from '@ant-design/icons'
 
+import { useContext } from 'react';
+import { TitleContext } from '../context';
+import { addBlog } from '../../../../services/blog';
+import { getNowDatetime } from '../../../../utils/datatime';
+
 const {Upload, Text, TextArea} = Field;
 
 export default function Add() {
-    function onOk(values) {
-        console.log('values', values);
+    const {id: categoryId} = useContext(TitleContext);
+
+    async function onOk(values) {
+        await addBlog({...values, categoryId, datatime: getNowDatetime()});
+        return true;
     }
 
     async function upload(files) {
