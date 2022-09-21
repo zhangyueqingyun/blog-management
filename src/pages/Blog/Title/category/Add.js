@@ -1,5 +1,5 @@
 import { ModalForm, Field } from '@zhangyueqingyun_/react-components';
-
+import { PlusCircleOutlined } from '@ant-design/icons'
 const { Text } = Field;
 
 export default function Add() {
@@ -8,11 +8,11 @@ export default function Add() {
     }
 
     return <ModalForm
-        trigger={<div className="op-icon">新建文件夹</div>}
-        title="新建文件夹"
+        trigger={<PlusCircleOutlined />}
+        title="新建分类"
         onOk={onOk}
     
     >
-        <Text name="title" label="文件夹名称" />
+        <Text name="title" label="标题" />
     </ModalForm>
 }

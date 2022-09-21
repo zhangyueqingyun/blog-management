@@ -1,16 +1,17 @@
 import { Modal } from '@zhangyueqingyun_/react-components';
+import { DeleteFilled } from '@ant-design/icons';
 
-export default function Delete() {
+export default function Delete({title}) {
     function onOk(values) {
         console.log('values', values);
     }
 
     return <Modal
-        trigger={<div className="op-icon">删除</div>}
+        trigger={<DeleteFilled />}
         title="删除博客"
         onOk={onOk}
     
     >  
-        确定要删除博客吗？
+        确定要删除博客“{title}”吗？
     </Modal>
 }

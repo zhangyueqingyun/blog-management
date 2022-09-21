@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Tree } from '@zhangyueqingyun_/react-components';
 import Title from './Title';
 import { getCategories } from '../../services/blog';
+import { FolderFilled, FileOutlined, FolderOpenFilled } from '@ant-design/icons';
 
 import './index.css'
 
@@ -35,12 +36,20 @@ async function getTreeData (id) {
     const categories = await getCategories(id);
     for(let category of categories) {
         category.key = category.id;
-        
+        category.isLeaf = category.type === 'blog'
+        category.icon = ({open}) => {
+            if(category.type === 'blog') {
+                return <FileOutlined />
+            } else {
+                return open ? <FolderOpenFilled /> : <FolderFilled />
+            }
+        }
         category.title = <Title
             id={category.id} 
             title={category.name} 
             description={category.description} 
             type={category.type}
+            open={category.open}
         />;
     }
     return categories;

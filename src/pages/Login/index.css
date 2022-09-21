@@ -5,14 +5,38 @@
     background: linear-gradient(white,#fff8f8);
     height: 100vh;
     box-sizing: border-box;
-    padding-top: 20vh;
+    padding-top: 18vh;
+    z-index: 3;
+}
+
+.container::before {   
+    content: "";
+    background-color: #ffcccc;
+    background-repeat: no-repeat;
+    background-image: url(https://zblog-images.oss-cn-hangzhou.aliyuncs.com/huyaoxiaohongniang.jpeg);
+    background-size: 100vw;  
+    opacity: 0.5;
+ 
+    position: absolute;  
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
 .actions .zyqy-button {
-    /* display: flex;
-    justify-content: flex-end; */
+    display: flex;
+    justify-content: center;
     width: 100%;
     margin-bottom: 0;
+    text-align: center;
+    padding: 9px;
+    
+}
+
+.zyqy-card {
+    opacity: .99;
+    box-shadow: 0 2px 5px -4px #3300001f, 0 5px 15px #33000014, 0 4px 27px 7px #3300000d;
 }
 
 .zyqy-card .title {
@@ -23,24 +47,16 @@
 
 .zyqy-card .content {
     background-color: #fff7f7;
-    width: 400px;
+    width: 330px;
     padding: 25px;
     height: auto;
 }
 
-.zyqy-card .zyqy-field {
-    width: 100%;
-}
 
 .zyqy-card .zyqy-label {
-    font-size: 15px;
+    font-size: 14px;
 }
 
-.zyqy-card .zyqy-input {
-    font-size: 16px;
-}
-
-
-.zyqy-card .zyqy-button {
-    padding: 7px 15px;
+.zyqy-card .zyqy-field {
+    width: 100%;
 }

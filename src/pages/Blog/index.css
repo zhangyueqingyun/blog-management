@@ -8,16 +8,18 @@
 }
 
 .blog-page .page-title {
-    padding: 5px 15px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 30px;
     font-weight: 700;
-    /* border-bottom: 1px solid #eee; */
-    font-size: 22px;
+    border-bottom: 1px solid #eee;
+    font-size: 20px;
     color: #333;
     margin-bottom: 30px;
 }
 
 .blog-page .page-content {
-    margin: 0 30px;
+    margin: 0 50px;
 }
 .zyqy-basic-layout-title {
     text-align: center;

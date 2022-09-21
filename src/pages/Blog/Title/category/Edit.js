@@ -1,5 +1,6 @@
 import { ModalForm, Field } from '@zhangyueqingyun_/react-components';
 
+import { EditOutlined } from '@ant-design/icons';
 const { Text } = Field;
 
 export default function Edit({title, description}) {
@@ -8,11 +9,11 @@ export default function Edit({title, description}) {
     }
 
     return <ModalForm
-        trigger={<div className="op-icon">编辑</div>}
-        title="编辑文件夹信息"
+        trigger={<EditOutlined />}
+        title="编辑分类"
         onOk={onOk}
     
     >  
-        <Text name="title" defaultValue={title} label="文件夹名称" />
+        <Text name="title" defaultValue={title} label="标题" />
     </ModalForm>
 }

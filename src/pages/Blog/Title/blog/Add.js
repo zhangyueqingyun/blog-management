@@ -1,7 +1,8 @@
 import { ModalForm, Field, Button, Toast } from '@zhangyueqingyun_/react-components';
 import { uploadBlog } from '../../../../utils/oss';
+import { PlusCircleFilled } from '@ant-design/icons'
 
-const {Upload, Text} = Field;
+const {Upload, Text, TextArea} = Field;
 
 export default function Add() {
     function onOk(values) {
@@ -16,15 +17,15 @@ export default function Add() {
     }
 
     return <ModalForm
-        trigger={<div className="op-icon">新增博客</div>}
+        trigger={<PlusCircleFilled />}
         title="新增博客"
         onOk={onOk}
     
     >
-        <Upload name="ossPath" upload={upload}>
+        <Upload label="文件" name="ossPath" upload={upload}>
             <Button type="primary">上传博客</Button>
         </Upload>   
-        <Text name="title" label="博客名称" />
-        <Text name="description" label="博客描述" />
+        <Text name="title" label="名称" />
+        <TextArea name="description" label="描述" />
     </ModalForm>
 }

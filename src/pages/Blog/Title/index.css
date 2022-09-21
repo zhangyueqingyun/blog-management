@@ -9,3 +9,16 @@
     cursor: pointer;
     font-size: .7em;
 }
+
+.zyqy-tree-node-collapse {
+    margin-top: 0;
+    color: #333;
+}
+
+.category-tree-title {
+    cursor: default;
+}
+
+.category-tree-actions .anticon {
+    font-size: 15px;
+}

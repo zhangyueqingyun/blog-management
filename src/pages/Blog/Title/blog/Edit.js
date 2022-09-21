@@ -1,6 +1,7 @@
 import { ModalForm, Field } from '@zhangyueqingyun_/react-components';
+import { EditFilled } from '@ant-design/icons';
 
-const { Text } = Field;
+const { Text, TextArea } = Field;
 
 export default function Edit({title, description}) {
     function onOk(values) {
@@ -8,12 +9,12 @@ export default function Edit({title, description}) {
     }
 
     return <ModalForm
-        trigger={<div className="op-icon">编辑博客</div>}
+        trigger={<EditFilled />}
         title="编辑博客"
         onOk={onOk}
     
     >  
         <Text name="title" defaultValue={title} label="博客名称" />
-        <Text name="description" defaultValue={description} label="博客描述" />
+        <TextArea name="description" defaultValue={description} label="博客描述" />
     </ModalForm>
 }
