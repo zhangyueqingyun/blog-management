@@ -15,7 +15,7 @@ export default function BlogPage () {
 
     async function initTreeData() {
         const data = await getTreeData(-1);
-        setTreeData(data);
+        setTreeData([{key: 'all', title: <Title id={-1} type='all' title='全部' />, children: data, open: true}]);
     }
 
     useEffect(function () {

@@ -31,6 +31,9 @@ export default function Title ({title, description, type, id}) {
                         <EditBlog />
                         <DeleteBlog />
                     </Space>}
+                    {type === 'all' && <Space interval={5}>
+                        <AddCategory />
+                    </Space>}
                 </>}
             </span>
         </Space></div>
