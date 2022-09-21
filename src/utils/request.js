@@ -11,7 +11,7 @@ const request = async function(url, options) {
       if(response?.status === 401 && response.data?.statusCode === 401 ) {
         sessionStorage.removeItem(SESSION_STORAGE.ACCESS_TOKEN);
         // message.error('用户身份验证失败，请重新登录！');
-        // window.location.href = '/management/user/login';
+        window.location.href = '/management/login';
       }
     }
 }

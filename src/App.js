@@ -4,7 +4,7 @@ import routerConfig from './config/router';
 
 import './App.css';
 
-const router = createBrowserRouter(routerConfig);
+const router = createBrowserRouter(routerConfig, {basename: '/management'});
 
 export default function App() {
   return (<React.StrictMode>

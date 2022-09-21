@@ -8,7 +8,10 @@ export default function BasicLayout() {
     const isLogin = pathname !== '/login' && sessionStorage['access_token'];
     if (!isLogin) {
         // message.error('请先登录！');
-        window.location.href = '/login';
+        window.location.href = '/management/login';
+    }
+    if(pathname === '/' || pathname === '/management/') {
+        window.location = window.location.href = '/management/blog';
     }
     return isLogin && (
     <Layout.BasicLayout 

@@ -15,7 +15,7 @@ function Actions({getValues}) {
         Toast.success('登陆成功');
         setLoading(false);
         setTimeout(function() {
-            window.location.href = '/blog';
+            window.location.href = '/management/blog';
         }, 2000);
         return
     }
