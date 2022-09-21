@@ -4,13 +4,16 @@ import { deleteBlog } from '../../../../services/blog'
 
 import { useContext } from 'react';
 import { TitleContext } from '../context';
+import { TreeContext } from '../../context';
 
 export default function Delete() {
-    const {id, title} = useContext(TitleContext);
-
+    const {data: {id, title, categoryId}} = useContext(TitleContext);
+    const {refetch} = useContext(TreeContext);
+    
     async function onOk(values) {
         await deleteBlog(id);
         Toast.success('删除成功');
+        refetch({key: categoryId});
         return true;
     }
 

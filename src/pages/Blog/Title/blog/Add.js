@@ -2,25 +2,32 @@ import { ModalForm, Field, Button, Toast } from '@zhangyueqingyun_/react-compone
 import { uploadBlog } from '../../../../utils/oss';
 import { PlusCircleFilled } from '@ant-design/icons'
 
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { TitleContext } from '../context';
 import { addBlog } from '../../../../services/blog';
 import { getNowDatetime } from '../../../../utils/datatime';
+import { TreeContext } from '../../context';
 
-const {Upload, Text, TextArea} = Field;
+const { Upload, Text, TextArea } = Field;
 
 export default function Add() {
-    const {id: categoryId} = useContext(TitleContext);
+    const {data: {id: categoryId}} = useContext(TitleContext);
+    const {refetch} = useContext(TreeContext);
+    const [file, setFile] = useState();
 
     async function onOk(values) {
         await addBlog({...values, categoryId, datatime: getNowDatetime()});
+        refetch({key: categoryId});
+        Toast.success('新增成功');
         return true;
     }
 
     async function upload(files) {
         const file = files[0];
+        console.log('file', file)
         await uploadBlog(file);
         Toast.success('上传成功');
+        setFile(file);
         return file.name;
     }
 
@@ -30,7 +37,7 @@ export default function Add() {
         onOk={onOk}
     
     >
-        <Upload label="文件" name="ossPath" upload={upload}>
+        <Upload label="文件" name="ossPath" upload={upload} uploadResult={<span style={{marginLeft: 10}}>{file?.name}</span>}>
             <Button type="primary">上传博客</Button>
         </Upload>   
         <Text name="title" label="名称" />

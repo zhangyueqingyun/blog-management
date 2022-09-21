@@ -14,11 +14,12 @@ import { TitleContext } from './context';
 
 import './index.css';
 
-export default function Title ({title, description, type, id}) {
+export default function Title ({data, refetch}) {
     const {enter, leave, isOver} = useMouse();
-    return (<TitleContext.Provider value={{title, description, id}}>
+    const {title, name, type} = data;
+    return (<TitleContext.Provider value={{data, refetch}}>
         <div onMouseEnter={enter} onMouseLeave={leave}><Space interval={10}>
-            <span className="category-tree-title">{title}</span>
+            <span className="category-tree-title">{title || name}</span>
             <span className="category-tree-actions">
                 {isOver && <>
                     {type === 'category' && <Space interval={5}>

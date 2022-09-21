@@ -4,15 +4,18 @@ import { PlusCircleOutlined } from '@ant-design/icons'
 import { useContext } from 'react';
 import { TitleContext } from '../context';
 import { addCategory } from '../../../../services/blog';
+import { TreeContext } from '../../context';
 
 const { Text } = Field;
 
 export default function Add() {
-    const {id: parentId} = useContext(TitleContext);
-
+    const {data: {id: parentId}} = useContext(TitleContext);
+    const {refetch} = useContext(TreeContext);
+    
     async function onOk(values) {
         await addCategory({...values, parentId});
         Toast.success('新建成功');
+        refetch({key: parentId})
         return true;
     }
 

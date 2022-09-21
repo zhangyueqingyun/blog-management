@@ -5,15 +5,19 @@ import { editBlog } from '../../../../services/blog';
 
 import { useContext } from 'react';
 import { TitleContext } from '../context';
+import { TreeContext } from '../../context';
 
 const { Text, TextArea } = Field;
 
 export default function Edit() {
-    const {id, title, description} = useContext(TitleContext);
-
+    const {data: {id, title, description, categoryId}} = useContext(TitleContext);
+    const {refetch} = useContext(TreeContext);
+    
     async function onOk(values) {
         await editBlog({...values, id});
         Toast.success('编辑成功');
+        refetch({key: categoryId});
+
         return true;
     }
 
